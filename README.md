@@ -1,4 +1,4 @@
-# Modalia
+# modalia-react
 
 **Modalia** is a lightweight React library that leverages the native HTML `<dialog>` tag to create flexible and accessible modals. By using React Portals, Modalia ensures that the modal is directly attached to the `body` element of the DOM, allowing for clean integration without affecting the rest of the component tree. The library enforces that only one modal can be active at a time, providing a focused and streamlined user experience. 
 
@@ -19,7 +19,7 @@ more options may be available in the future
 ## Installation
 
 ```bash
-npm install modalia
+npm install modalia-react
 ```
 
 ## Build
@@ -33,8 +33,8 @@ npm build
 
 ```jsx
 import React, { useState } from "react";
-import Modalia from './Modalia';
-import './Modalia.css';
+import Modalia from 'modalia-react';
+import 'modalia-react/dist/Modalia.css';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
