@@ -1,0 +1,29 @@
+{
+  "name": "modalia",
+  "version": "1.0.0",
+  "description": "A flexible, reusable modal component for React",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist --copy-files && rename dist/Modalia.js index.js"
+  },
+  "keywords": [
+    "react",
+    "modal",
+    "modalia",
+    "component",
+    "reusable"
+  ],
+  "author": "Michelangelo Giacomelli",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.25.7",
+    "@babel/preset-env": "^7.25.8",
+    "@babel/preset-react": "^7.25.7",
+    "cross-env": "^7.0.3",
+    "rename-cli": "^6.2.1"
+  },
+  "dependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  }
+}
