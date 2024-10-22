@@ -12,7 +12,7 @@ you can see a demonstration here: [https://micheg.altervista.org/modalia_test/](
 
 ---
 
-## Pros
+## Props
 
 - **size**: horizontal space, can be one of: `small`, `medium`, `large`, or `xl`, default is: `small`
 - **verticalPosition**: vertical alignment, can be one of: `center`, `top`, or `bottom`, default is `center`
