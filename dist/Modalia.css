@@ -7,37 +7,53 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.6); /* Semi-transparent backdrop */
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)); /* Foggy effect */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 9999; /* Ensure the modal appears on top */
 }
 
-/* Dialog box styling */
+/* Modal dialog box */
 .modal-dialog {
-  max-height: 90vh;
+  max-height: 90vh; /* Ensure modal doesn't exceed viewport height */
   width: 60vw;
   border: none;
   border-radius: 8px;
   background-color: white;
-  overflow: hidden;
+  overflow: hidden; /* Ensure content overflows inside */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  position: absolute; /* Absolute positioning for manual control */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
 }
 
-/* Title bar container to hold both the title and close button */
+/* Center the dialog vertically (default) */
+.modal-dialog.center {
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+}
+
+/* Position the dialog at the top */
+.modal-dialog.top {
+  top: 10%; /* You can adjust this value as needed */
+  transform: translateX(-50%); /* Only center horizontally */
+}
+
+/* Position the dialog at the bottom */
+.modal-dialog.bottom {
+  bottom: 10%; /* You can adjust this value as needed */
+  transform: translateX(-50%); /* Only center horizontally */
+}
+
+/* Modal header (flex container for title and close button) */
 .modal-header {
   display: flex;
-  justify-content: space-between; /* Ensures the title and button are on opposite sides */
-  align-items: center; /* Vertically aligns the title and button */
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
-  border-bottom: 1px solid #eee; /* Thin line below the header */
+  border-bottom: 1px solid #eee;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Title styling */
+/* Modal title */
 .modal-title {
   font-size: 24px;
   font-weight: bold;
@@ -45,25 +61,25 @@
   margin: 0;
 }
 
-/* Close button styling */
+/* Close button */
 .close-button {
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
-  padding: 0;  /* Override global padding */
-  margin: 0;   /* Override global margin */
+  padding: 0;
+  margin: 0;
 }
 
 .close-button:hover {
   color: red;
 }
 
-/* Content styling with scrollable content */
+/* Scrollable content */
 .content {
   padding: 20px;
-  height: 100%;
-  overflow-y: auto;
+  max-height: 70vh; /* Ensure the content area is scrollable */
+  overflow-y: auto; /* Enable vertical scrolling */
   box-sizing: border-box;
 }
 

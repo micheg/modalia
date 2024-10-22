@@ -12,7 +12,32 @@ you can see a demonstration here: [https://micheg.altervista.org/modalia_test/](
 
 ---
 
-more options may be available in the future
+## Pros
+
+- **size**: horizontal space, can be one of: `small`, `medium`, `large`, or `xl`, default is: `small`
+- **verticalPosition**: vertical alignment, can be one of: `center`, `top`, or `bottom`, default is `center`
+- **customClass**: this parameter allows you to pass a class that will be applied to the element, default is void.
+
+---
+
+## Events
+
+- **beforeOpen**:
+  - This callback is called before the modal opens. It’s executed right before the modal is rendered to the DOM and the body scroll is disabled.
+  - It’s added to the useEffect hook, which runs when the isOpen state changes.
+- **onReady**:
+  - This callback is executed immediately after the first rendering of the modal. This ensures that the modal has been inserted into the DOM.
+  - We use setIsRendered(true) in the useEffect hook to manage the state for this callback.
+- **beforeClose**:
+  - This callback is executed just before the modal starts closing.
+  - It’s called inside the handleClose function, just before the onClose callback.
+- **onClose**:
+  - This callback is executed after the modal is closed. It’s the final step in the closing process, allowing any post-close logic to be handled.
+  - It’s called after the beforeClose callback.
+
+---
+
+more props may be available in the future.
 
 ---
 
@@ -22,6 +47,8 @@ more options may be available in the future
 npm install modalia-react
 ```
 
+---
+
 ## Build
 
 ```bash
@@ -29,7 +56,31 @@ npm install
 npm build
 ```
 
+---
+
 ## Usage
+
+```jsx
+<Modalia
+  isOpen={isOpen}
+  onClose={() => {
+    console.log('Modal is fully closed.');
+    setIsOpen(false);
+  }}
+  beforeClose={() => console.log('Modal is about to close...')}
+  title="My Modal"
+  size="large"
+  verticalPosition="bottom"
+  beforeOpen={() => console.log('Modal is about to open...')}
+  onReady={() => console.log('Modal has been rendered and is ready.')}
+>
+  <p>This is the content of the modal aligned to the bottom.</p>
+</Modalia>
+```
+
+---
+
+## Example
 
 ```jsx
 import React, { useState } from "react";
