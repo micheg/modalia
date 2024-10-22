@@ -7,11 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _reactDom = require("react-dom");
-require("./Modalia.css");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
-// Import the external stylesheet
-
 var Modalia = function Modalia(_ref) {
   var isOpen = _ref.isOpen,
     onClose = _ref.onClose,
@@ -52,12 +49,14 @@ var Modalia = function Modalia(_ref) {
       width: getSize()
     }
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "content"
+    className: "modal-header"
   }, /*#__PURE__*/_react["default"].createElement("h2", {
     className: "modal-title"
-  }, title), children, /*#__PURE__*/_react["default"].createElement("button", {
+  }, title), /*#__PURE__*/_react["default"].createElement("button", {
     className: "close-button",
     onClick: onClose
-  }, "\xD7")))), document.body);
+  }, "\xD7")), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "content"
+  }, children))), document.body);
 };
 var _default = exports["default"] = Modalia;

@@ -4,7 +4,9 @@
   "description": "A flexible, reusable modal component for React",
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel src --out-dir dist --copy-files && rename dist/Modalia.js index.js"
+    "clean": "rimraf dist",
+    "build": "babel src --out-dir dist --copy-files && rename dist/Modalia.js index.js",
+    "start": "react-scripts start"
   },
   "keywords": [
     "react",
@@ -20,11 +22,12 @@
     "@babel/preset-env": "^7.25.8",
     "@babel/preset-react": "^7.25.7",
     "cross-env": "^7.0.3",
-    "rename-cli": "^6.2.1"
+    "rename-cli": "^6.2.1",
+    "rimraf": "^6.0.1"
   },
   "dependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "peerDependencies": {
     "react": ">=16.8",
