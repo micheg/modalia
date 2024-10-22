@@ -1,5 +1,5 @@
 {
-  "name": "modalia",
+  "name": "modalia-react",
   "version": "1.0.0",
   "description": "A flexible, reusable modal component for React",
   "main": "dist/index.js",
