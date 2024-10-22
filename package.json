@@ -3,6 +3,10 @@
   "version": "1.0.5",
   "description": "A flexible, reusable modal component for React",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/micheg/modalia"
+  },
   "scripts": {
     "clean": "rimraf dist",
     "build": "babel src --out-dir dist --copy-files && rename dist/Modalia.js index.js"
